@@ -36,26 +36,28 @@ import { Component, HostListener, signal } from '@angular/core';
         target="_blank"
         rel="noreferrer"
         aria-label="Conversar no WhatsApp"
-        class="group relative flex items-center justify-center size-13 sm:size-14 rounded-full bg-[#25D366] text-white shadow-[0_8px_20px_rgba(37,211,102,0.35)] transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_25px_rgba(37,211,102,0.5)] active:scale-95"
+        class="group relative flex items-center justify-center size-14 rounded-full bg-[#25D366] text-white shadow-[0_4px_16px_rgba(37,211,102,0.4)] transition-all duration-300 hover:scale-108 hover:shadow-[0_6px_22px_rgba(37,211,102,0.55)] active:scale-95"
       >
-        <!-- Pulse effect ring (pulso discreto e contido, sem espalhar muito) -->
-        <span class="absolute -inset-1 rounded-full bg-[#25D366]/40 animate-ping -z-10 pointer-events-none [animation-duration:2.5s]"></span>
+        <!-- Pulse effect ring -->
+        <span class="absolute -inset-1 rounded-full bg-[#25D366]/35 animate-ping -z-10 pointer-events-none [animation-duration:2.5s]"></span>
 
         <!-- Tooltip on hover (desktop) -->
         <span
-          class="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-lg bg-deep/95 border border-border/80 px-2.5 py-1 font-sans text-xs font-medium text-foreground opacity-0 shadow-xl backdrop-blur-xl transition-all duration-200 group-hover:opacity-100 group-hover:-translate-x-1"
+          class="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-lg bg-deep/95 border border-border/80 px-3 py-1.5 font-sans text-xs font-medium text-foreground opacity-0 shadow-xl backdrop-blur-xl transition-all duration-200 group-hover:opacity-100 group-hover:-translate-x-1"
         >
           Falar no WhatsApp
         </span>
 
-        <!-- WhatsApp official detailed SVG icon -->
+        <!-- WhatsApp Official Logo: Green bubble backdrop with white handset -->
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          class="size-7 sm:size-7.5 drop-shadow-sm"
+          viewBox="0 0 32 32"
+          class="size-8"
         >
-          <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.27-2.42 5.82a8.188 8.188 0 0 1-5.82 2.42c-1.48 0-2.93-.39-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.84 11.64c-.26-.13-1.55-.77-1.79-.86-.24-.09-.42-.13-.6.13-.18.26-.69.86-.84 1.04-.16.18-.31.2-.57.07-.26-.13-1.11-.41-2.11-1.3-.78-.7-1.31-1.56-1.46-1.82-.16-.26-.02-.4.11-.53.12-.12.26-.31.39-.46.13-.16.17-.26.26-.44.09-.18.04-.33-.02-.46-.07-.13-.6-1.45-.82-1.99-.22-.53-.44-.46-.6-.46-.16 0-.34-.02-.53-.02-.18 0-.48.07-.73.34-.26.27-.99.97-.99 2.37 0 1.4 1.02 2.76 1.16 2.95.15.19 2.01 3.07 4.88 4.31.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.12.55-.08 1.55-.63 1.77-1.25.22-.61.22-1.14.15-1.25-.06-.11-.23-.18-.49-.31z"/>
+          <path
+            fill="#ffffff"
+            d="M16 2.5C8.544 2.5 2.5 8.544 2.5 16c0 2.61.737 5.05 2.012 7.126L3.06 28.94l6.02-1.428A13.43 13.43 0 0 0 16 29.5c7.456 0 13.5-6.044 13.5-13.5S23.456 2.5 16 2.5zm0 2.274c6.2 0 11.226 5.026 11.226 11.226S22.2 27.226 16 27.226c-2.144 0-4.14-.6-5.83-1.644l-.417-.258-4.324 1.026 1.05-4.2-.275-.436A11.17 11.17 0 0 1 4.774 16C4.774 9.8 9.8 4.774 16 4.774zm-4.708 5.485c-.258 0-.674.097-1.026.48-.352.384-1.344 1.313-1.344 3.202s1.376 3.714 1.568 3.97c.192.257 2.656 4.237 6.557 5.76 3.24 1.266 3.9.845 4.604.78.704-.064 2.272-.93 2.592-1.825.32-.897.32-1.666.224-1.826-.096-.16-.352-.256-.736-.448-.384-.192-2.272-1.12-2.624-1.248-.352-.128-.608-.192-.864.192-.256.384-.992 1.248-1.216 1.504-.224.256-.448.288-.832.096-.384-.192-1.62-.598-3.086-1.905-1.141-1.018-1.912-2.277-2.136-2.66-.224-.385-.024-.593.168-.784.174-.173.384-.448.576-.672.192-.224.256-.384.384-.64.128-.256.064-.48-.032-.672-.096-.192-.843-2.079-1.183-2.825-.33-.726-.667-.621-.916-.633-.237-.012-.51-.014-.783-.014z"
+          />
         </svg>
       </a>
     </div>
