@@ -1,0 +1,1 @@
+var e=`/assets/printer-farm-BHsjBhCR.jpg`;export{e as t};

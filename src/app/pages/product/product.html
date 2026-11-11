@@ -1,0 +1,190 @@
+<!-- Brand Hero -->
+<section class="relative overflow-hidden">
+  <canvas appLifestream aria-hidden="true" class="pointer-events-none h-full w-full absolute inset-0 opacity-70"></canvas>
+  <div class="site-container py-16 sm:py-20 lg:py-28 relative">
+    <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+      <div class="animate-rise">
+        <p class="eyebrow">{{ line().name }}</p>
+        <h1 class="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight">
+          <span class="text-stream">{{ line().headline }}</span>
+        </h1>
+        <p class="mt-6 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed">
+          {{ line().intro }}
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-4 items-center">
+          <a
+            href="https://wa.me/5515981679823"
+            target="_blank"
+            rel="noreferrer"
+            class="btn-stream"
+          >
+            Solicitar orçamento
+          </a>
+          <a class="btn-stream-outline" routerLink="/contato">
+            Como chegar
+          </a>
+        </div>
+
+        <p class="mt-6 font-mono text-xs text-muted-foreground">
+          Desde 1999 · Garantia de 180 dias · Diagnóstico em 10 a 56 horas úteis
+        </p>
+      </div>
+
+      <div class="relative animate-rise [animation-delay:150ms]">
+        <div class="absolute -inset-6 rounded-[2rem] bg-stream opacity-20 blur-3xl"></div>
+        <img
+          [src]="line().image"
+          [alt]="'Manutenção de impressora 3D ' + line().shortName"
+          width="1280"
+          height="960"
+          class="relative aspect-[4/3] w-full rounded-3xl border border-border object-cover glow shadow-2xl"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Models Supported -->
+<section class="site-container py-12" appScrollReveal="fade-up">
+  <div class="glass rounded-3xl p-6 sm:p-8">
+    <div class="flex items-center gap-3">
+      <div class="grid size-9 place-items-center rounded-xl bg-primary/10 border border-primary/30 text-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5"><path d="M12 20v2"></path><path d="M12 2v2"></path><path d="M17 20v2"></path><path d="M17 2v2"></path><path d="M2 12h2"></path><path d="M2 17h2"></path><path d="M2 7h2"></path><path d="M20 12h2"></path><path d="M20 17h2"></path><path d="M20 7h2"></path><path d="M7 20v2"></path><path d="M7 2v2"></path><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="8" y="8" width="8" height="8" rx="1"></rect></svg>
+      </div>
+      <h2 class="text-xl sm:text-2xl font-semibold text-foreground">Modelos atendidos</h2>
+    </div>
+
+    <ul class="mt-6 flex flex-wrap gap-2.5">
+      @for (model of line().models; track model) {
+        <li class="rounded-full border border-primary/30 bg-primary/5 px-4 py-2 font-mono text-xs sm:text-sm text-foreground">
+          {{ model }}
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<!-- Problems & Services Grid -->
+<section class="site-container py-8">
+  <div class="grid gap-6 lg:grid-cols-2">
+    <!-- Problems Column -->
+    <div class="glass rounded-3xl p-6 sm:p-8 flex flex-col justify-between" appScrollReveal="fade-right">
+      <div>
+        <div class="flex items-center gap-3">
+          <div class="grid size-9 place-items-center rounded-xl bg-primary/10 border border-primary/30 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+          </div>
+          <h2 class="text-xl sm:text-2xl font-semibold text-foreground">Problemas que resolvemos</h2>
+        </div>
+
+        <ul class="mt-6 space-y-3.5 text-sm sm:text-base text-muted-foreground">
+          @for (problem of line().problems; track problem) {
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 size-5 shrink-0 text-primary"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              <span>{{ problem }}</span>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+
+    <!-- Services Cards Grid -->
+    <div class="grid gap-4 sm:grid-cols-2">
+      @for (service of line().services; track service.title; let i = $index) {
+        <div
+          class="glass card-hover rounded-2xl p-6 flex flex-col justify-between"
+          appScrollReveal="fade-up"
+          [revealDelay]="i * 75"
+        >
+          <div class="grid size-10 place-items-center rounded-xl bg-primary/10 border border-primary/30 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"></path></svg>
+          </div>
+          <div class="mt-4">
+            <h3 class="font-semibold text-foreground text-base sm:text-lg">{{ service.title }}</h3>
+            <p class="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">{{ service.text }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Accordion -->
+<section class="site-container max-w-3xl py-16 sm:py-20" appScrollReveal="fade-up">
+  <p class="eyebrow text-center">Dúvidas frequentes</p>
+  <h2 class="mt-3 text-center text-3xl sm:text-4xl font-semibold">
+    Perguntas sobre {{ line().shortName }}
+  </h2>
+
+  <div class="mt-10 divide-y divide-border/60">
+    @for (item of line().faq; track item.q; let i = $index) {
+      <div class="py-4">
+        <h3>
+          <button
+            type="button"
+            (click)="toggle(i)"
+            [attr.aria-expanded]="open() === i"
+            class="flex w-full items-center justify-between py-2 text-left text-base sm:text-lg font-medium text-foreground transition-colors hover:text-primary cursor-pointer"
+          >
+            <span>{{ item.q }}</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="size-4 shrink-0 text-muted-foreground transition-transform duration-200"
+              [class.rotate-180]="open() === i"
+            >
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </button>
+        </h3>
+        @if (open() === i) {
+          <div class="pt-2 pb-3 text-sm sm:text-base text-muted-foreground leading-relaxed animate-rise">
+            {{ item.a }}
+          </div>
+        }
+      </div>
+    }
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="site-container pb-16" appScrollReveal="zoom-in">
+  <div class="glass relative overflow-hidden rounded-3xl px-6 py-14 sm:px-12 md:px-16 text-center border border-border/70">
+    <div class="relative max-w-2xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground tracking-tight">
+        Sua {{ line().shortName }} parada? A gente resolve.
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
+        Envie fotos ou um vídeo do problema pelo WhatsApp e receba uma primeira avaliação sem compromisso.
+      </p>
+      <div class="mt-8">
+        <a href="https://wa.me/5515981679823" target="_blank" rel="noreferrer" class="btn-stream">
+          Falar com um técnico
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Other Services Navigation -->
+<section class="site-container pb-16" appScrollReveal="fade-up">
+  <h2 class="eyebrow">Outros serviços</h2>
+  <div class="mt-5 flex flex-wrap gap-3">
+    @for (other of otherLines(); track other.slug) {
+      <a class="glass card-hover rounded-full px-5 py-2.5 text-sm font-medium text-foreground" [routerLink]="other.path">
+        {{ other.name }}
+      </a>
+    }
+    <a class="glass card-hover rounded-full px-5 py-2.5 text-sm font-medium text-foreground" routerLink="/contrato-empresas">
+      Contrato para Empresas
+    </a>
+  </div>
+</section>

@@ -1,0 +1,189 @@
+<header
+  class="w-full transition-all duration-300 border-b"
+  [class.bg-background/95]="isScrolled() || open()"
+  [class.bg-background/85]="!isScrolled() && !open()"
+  [class.backdrop-blur-2xl]="true"
+  [class.border-border/80]="isScrolled()"
+  [class.border-border/50]="!isScrolled()"
+  [class.shadow-2xl]="isScrolled()"
+  [class.shadow-black/40]="isScrolled()"
+>
+  <div class="site-container flex h-18 items-center justify-between">
+    <!-- Brand Logo -->
+    <a class="group flex items-center gap-3.5" routerLink="/">
+      <img
+        src="/assets/logo-nav.webp"
+        alt="Quantic 3D Logo"
+        width="48"
+        height="35"
+        class="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_12px_rgba(92,240,160,0.3)]"
+        loading="eager"
+      />
+      <span class="leading-tight">
+        <span class="block font-display text-lg font-bold tracking-tight text-foreground group-hover:text-stream transition-colors">
+          Quantic 3D
+        </span>
+        <span class="block font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground"
+          >desde 1999</span
+        >
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-8 lg:flex" aria-label="Principal">
+      <a
+        routerLink="/"
+        routerLinkActive="text-primary font-medium"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="text-sm text-muted-foreground transition-colors hover:text-foreground"
+        >Início</a
+      >
+
+      <!-- Dropdown Manutenção -->
+      <div class="group relative">
+        <button
+          class="text-sm text-muted-foreground transition-colors hover:text-foreground flex items-center gap-1.5 cursor-pointer py-2"
+          aria-haspopup="true"
+        >
+          <span>Manutenção</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="size-3.5 transition-transform duration-200 group-hover:rotate-180 text-muted-foreground group-hover:text-primary"
+            aria-hidden="true"
+          >
+            <path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </button>
+
+        <!-- Dropdown Menu com opacidade e nitidez reforçadas -->
+        <div
+          class="invisible absolute left-1/2 top-full w-72 -translate-x-1/2 pt-2.5 opacity-0 transition-all duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100 z-50 pointer-events-none group-hover:pointer-events-auto group-focus-within:pointer-events-auto"
+        >
+          <div
+            class="rounded-2xl p-2.5 border border-primary/25 bg-[oklch(15%_0.025_190/0.98)] backdrop-blur-3xl shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_0_1px_rgba(255,255,255,0.06)] ring-1 ring-black/50"
+          >
+            <div class="px-3 py-1.5 mb-1 border-b border-border/40">
+              <span class="font-mono text-[10px] uppercase tracking-wider text-primary font-semibold">
+                Linhas atendidas
+              </span>
+            </div>
+
+            @for (line of lines; track line.slug) {
+              <a
+                class="flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-medium text-muted-foreground transition-all duration-150 hover:bg-primary/15 hover:text-foreground hover:translate-x-1"
+                routerLinkActive="!bg-primary/20 !text-primary font-semibold"
+                [routerLink]="line.path"
+              >
+                <span>{{ line.name }}</span>
+                <span class="font-mono text-[11px] text-primary/70 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+              </a>
+            }
+          </div>
+        </div>
+      </div>
+
+      <a
+        routerLink="/contrato-empresas"
+        routerLinkActive="text-primary font-medium"
+        class="text-sm text-muted-foreground transition-colors hover:text-foreground"
+        >Empresas</a
+      >
+      <a
+        routerLink="/contato"
+        routerLinkActive="text-primary font-medium"
+        class="text-sm text-muted-foreground transition-colors hover:text-foreground"
+        >Como chegar</a
+      >
+    </nav>
+
+    <div class="hidden items-center gap-4 lg:flex">
+      <a
+        href="https://wa.me/5515981679823"
+        target="_blank"
+        rel="noreferrer"
+        class="btn-stream !h-9.5 !px-5 !text-sm"
+        >Orçamento no WhatsApp</a
+      >
+    </div>
+
+    <!-- Mobile menu toggle button -->
+    <button
+      class="grid size-10 place-items-center rounded-xl border border-border bg-card/60 transition-colors hover:border-primary/40 lg:hidden cursor-pointer"
+      (click)="toggle()"
+      [attr.aria-label]="open() ? 'Fechar menu' : 'Abrir menu'"
+      [attr.aria-expanded]="open()"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="size-5 text-foreground"
+        aria-hidden="true"
+      >
+        @if (open()) {
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        } @else {
+          <path d="M4 5h16"></path>
+          <path d="M4 12h16"></path>
+          <path d="M4 19h16"></path>
+        }
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Drawer -->
+  @if (open()) {
+    <nav
+      class="border-t border-border/70 bg-background/98 px-5 py-5 backdrop-blur-3xl lg:hidden animate-rise"
+      aria-label="Menu móvel"
+    >
+      <ul class="space-y-1.5" (click)="toggle()">
+        <li>
+          <a class="block rounded-xl px-4 py-3 text-base text-foreground hover:bg-primary/10 transition-colors" routerLink="/">Início</a>
+        </li>
+        @for (line of lines; track line.slug) {
+          <li>
+            <a class="block rounded-xl px-4 py-3 text-base text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors" [routerLink]="line.path">{{
+              line.name
+            }}</a>
+          </li>
+        }
+        <li>
+          <a
+            class="block rounded-xl px-4 py-3 text-base text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
+            routerLink="/contrato-empresas"
+            >Contrato para Empresas</a
+          >
+        </li>
+        <li>
+          <a class="block rounded-xl px-4 py-3 text-base text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors" routerLink="/contato"
+            >Como chegar</a
+          >
+        </li>
+      </ul>
+      <div class="mt-4 pt-3 border-t border-border/40">
+        <a
+          href="https://wa.me/5515981679823"
+          target="_blank"
+          rel="noreferrer"
+          class="btn-stream w-full !h-12 !text-base"
+          >Orçamento no WhatsApp</a
+        >
+      </div>
+    </nav>
+  }
+</header>
