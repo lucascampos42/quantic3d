@@ -13,6 +13,9 @@
     <!-- Quick Contact Cards -->
     <div class="mt-10 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
       <a
+        appScrollReveal
+        [animation]="'fade-up'"
+        [delay]="50"
         href="https://wa.me/5515981679823"
         target="_blank"
         rel="noreferrer"
@@ -26,6 +29,9 @@
       </a>
 
       <a
+        appScrollReveal
+        [animation]="'fade-up'"
+        [delay]="150"
         href="https://www.google.com/maps/search/?api=1&amp;query=Rua%20Ant%C3%B4nio%20Jos%C3%A9%20Rogick%2C%20257%20-%20Vila%20Trujillo%2C%20Sorocaba%20-%20SP%2C%2018060-290"
         target="_blank"
         rel="noreferrer"
@@ -39,6 +45,9 @@
       </a>
 
       <a
+        appScrollReveal
+        [animation]="'fade-up'"
+        [delay]="250"
         href="mailto:quanticsorocaba@gmail.com"
         target="_blank"
         rel="noreferrer"
@@ -55,7 +64,7 @@
 </section>
 
 <!-- Location & Map Details -->
-<section class="site-container site-section pt-0">
+<section appScrollReveal [animation]="'fade-up'" class="site-container site-section pt-0">
   <div class="grid gap-6 lg:grid-cols-5 items-stretch">
     <!-- Map iframe with progressive loading -->
     <div class="glass overflow-hidden rounded-3xl lg:col-span-3 min-h-[350px] lg:min-h-[460px]">
@@ -132,7 +141,7 @@
 </section>
 
 <!-- Transport tips -->
-<section class="site-container pb-16">
+<section appScrollReveal [animation]="'zoom-in'" class="site-container pb-16">
   <div class="glass grid gap-8 rounded-3xl p-6 sm:p-8 md:grid-cols-[auto_1fr] md:items-center">
     <div class="grid size-14 place-items-center rounded-2xl border border-primary/30 bg-primary/10 text-primary shrink-0">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle cx="17" cy="18" r="2"></circle><circle cx="7" cy="18" r="2"></circle></svg>

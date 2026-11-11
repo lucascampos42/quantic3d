@@ -1,11 +1,12 @@
 import { Component, computed, input, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Lifestream } from '../../shared/lifestream';
+import { ScrollRevealDirective } from '../../shared/scroll-reveal.directive';
 import { PRINTER_LINES } from '../../data/lines';
 
 @Component({
   selector: 'app-product',
-  imports: [RouterLink, Lifestream],
+  imports: [RouterLink, Lifestream, ScrollRevealDirective],
   templateUrl: './product.html',
 })
 export class ProductPage {

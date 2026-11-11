@@ -46,7 +46,7 @@
 </section>
 
 <!-- Models Supported -->
-<section class="site-container py-12">
+<section class="site-container py-12" appScrollReveal="fade-up">
   <div class="glass rounded-3xl p-6 sm:p-8">
     <div class="flex items-center gap-3">
       <div class="grid size-9 place-items-center rounded-xl bg-primary/10 border border-primary/30 text-primary">
@@ -69,7 +69,7 @@
 <section class="site-container py-8">
   <div class="grid gap-6 lg:grid-cols-2">
     <!-- Problems Column -->
-    <div class="glass rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+    <div class="glass rounded-3xl p-6 sm:p-8 flex flex-col justify-between" appScrollReveal="fade-right">
       <div>
         <div class="flex items-center gap-3">
           <div class="grid size-9 place-items-center rounded-xl bg-primary/10 border border-primary/30 text-primary">
@@ -91,8 +91,12 @@
 
     <!-- Services Cards Grid -->
     <div class="grid gap-4 sm:grid-cols-2">
-      @for (service of line().services; track service.title) {
-        <div class="glass card-hover rounded-2xl p-6 flex flex-col justify-between">
+      @for (service of line().services; track service.title; let i = $index) {
+        <div
+          class="glass card-hover rounded-2xl p-6 flex flex-col justify-between"
+          appScrollReveal="fade-up"
+          [revealDelay]="i * 75"
+        >
           <div class="grid size-10 place-items-center rounded-xl bg-primary/10 border border-primary/30 text-primary">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"></path></svg>
           </div>
@@ -107,7 +111,7 @@
 </section>
 
 <!-- FAQ Accordion -->
-<section class="site-container max-w-3xl py-16 sm:py-20">
+<section class="site-container max-w-3xl py-16 sm:py-20" appScrollReveal="fade-up">
   <p class="eyebrow text-center">Dúvidas frequentes</p>
   <h2 class="mt-3 text-center text-3xl sm:text-4xl font-semibold">
     Perguntas sobre {{ line().shortName }}
@@ -152,7 +156,7 @@
 </section>
 
 <!-- CTA -->
-<section class="site-container pb-16">
+<section class="site-container pb-16" appScrollReveal="zoom-in">
   <div class="glass relative overflow-hidden rounded-3xl px-6 py-14 sm:px-12 md:px-16 text-center border border-border/70">
     <div class="relative max-w-2xl mx-auto">
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground tracking-tight">
@@ -171,7 +175,7 @@
 </section>
 
 <!-- Other Services Navigation -->
-<section class="site-container pb-16">
+<section class="site-container pb-16" appScrollReveal="fade-up">
   <h2 class="eyebrow">Outros serviços</h2>
   <div class="mt-5 flex flex-wrap gap-3">
     @for (other of otherLines(); track other.slug) {

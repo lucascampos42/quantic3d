@@ -5,10 +5,11 @@ import { filter } from 'rxjs';
 import { Header } from './shared/header/header';
 import { Footer } from './shared/footer/footer';
 import { FloatingActions } from './shared/floating-actions';
+import { ScrollProgress } from './shared/scroll-progress';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Footer, FloatingActions],
+  imports: [RouterOutlet, Header, Footer, FloatingActions, ScrollProgress],
   templateUrl: './app.html',
 })
 export class App {

@@ -127,8 +127,12 @@
 </section>
 
 <!-- Stats Grid -->
-<section class="relative z-10 site-container -mt-10 sm:-mt-14">
-  <div class="glass grid grid-cols-2 md:grid-cols-4 gap-px overflow-hidden rounded-3xl border border-border/80">
+<section
+  appScrollReveal
+  [animation]="'fade-up'"
+  class="relative z-10 site-container -mt-10 sm:-mt-14"
+>
+  <div class="glass grid grid-cols-2 md:grid-cols-4 gap-px overflow-hidden rounded-3xl border border-border/80 shadow-2xl">
     <div class="p-6 sm:p-8 text-center bg-card/40">
       <div class="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-stream">26+</div>
       <div class="mt-2 text-xs sm:text-sm text-muted-foreground">anos em manutenção eletrônica</div>
@@ -150,7 +154,7 @@
 
 <!-- Brand Services Section -->
 <section class="site-container site-section">
-  <div class="max-w-2xl">
+  <div appScrollReveal [animation]="'fade-up'" class="max-w-2xl">
     <p class="eyebrow">O que fazemos</p>
     <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight">
       Manutenção por marca, com quem conhece cada detalhe.
@@ -159,7 +163,13 @@
 
   <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
     <!-- Bambu Lab -->
-    <a class="glass card-hover group relative overflow-hidden rounded-3xl flex flex-col" routerLink="/manutencao-bambu-lab">
+    <a
+      appScrollReveal
+      [animation]="'fade-up'"
+      [delay]="50"
+      class="glass card-hover group relative overflow-hidden rounded-3xl flex flex-col"
+      routerLink="/manutencao-bambu-lab"
+    >
       <div class="relative aspect-[16/10] overflow-hidden">
         <img
           src="/assets/printer-bambu-DGzYttBf.jpg"
@@ -186,7 +196,13 @@
     </a>
 
     <!-- Creality -->
-    <a class="glass card-hover group relative overflow-hidden rounded-3xl flex flex-col" routerLink="/manutencao-creality">
+    <a
+      appScrollReveal
+      [animation]="'fade-up'"
+      [delay]="150"
+      class="glass card-hover group relative overflow-hidden rounded-3xl flex flex-col"
+      routerLink="/manutencao-creality"
+    >
       <div class="relative aspect-[16/10] overflow-hidden">
         <img
           src="/assets/printer-creality-D54mHevI.jpg"
@@ -213,7 +229,13 @@
     </a>
 
     <!-- Elegoo -->
-    <a class="glass card-hover group relative overflow-hidden rounded-3xl flex flex-col" routerLink="/manutencao-elegoo">
+    <a
+      appScrollReveal
+      [animation]="'fade-up'"
+      [delay]="250"
+      class="glass card-hover group relative overflow-hidden rounded-3xl flex flex-col"
+      routerLink="/manutencao-elegoo"
+    >
       <div class="relative aspect-[16/10] overflow-hidden">
         <img
           src="/assets/printer-elegoo-3ksDhL1I.jpg"
@@ -240,7 +262,13 @@
     </a>
 
     <!-- Anycubic -->
-    <a class="glass card-hover group relative overflow-hidden rounded-3xl flex flex-col" routerLink="/manutencao-anycubic">
+    <a
+      appScrollReveal
+      [animation]="'fade-up'"
+      [delay]="50"
+      class="glass card-hover group relative overflow-hidden rounded-3xl flex flex-col"
+      routerLink="/manutencao-anycubic"
+    >
       <div class="relative aspect-[16/10] overflow-hidden">
         <img
           src="/assets/printer-anycubic-DCv6teta.jpg"
@@ -267,7 +295,13 @@
     </a>
 
     <!-- Resina -->
-    <a class="glass card-hover group relative overflow-hidden rounded-3xl flex flex-col" routerLink="/manutencao-impressoras-resina">
+    <a
+      appScrollReveal
+      [animation]="'fade-up'"
+      [delay]="150"
+      class="glass card-hover group relative overflow-hidden rounded-3xl flex flex-col"
+      routerLink="/manutencao-impressoras-resina"
+    >
       <div class="relative aspect-[16/10] overflow-hidden">
         <img
           src="/assets/printer-resin-lab-8YsjAlob.jpg"
@@ -294,7 +328,13 @@
     </a>
 
     <!-- Empresas -->
-    <a class="card-hover group relative overflow-hidden rounded-3xl border border-primary/40 bg-primary/10 glow flex flex-col" routerLink="/contrato-empresas">
+    <a
+      appScrollReveal
+      [animation]="'fade-up'"
+      [delay]="250"
+      class="card-hover group relative overflow-hidden rounded-3xl border border-primary/40 bg-primary/10 glow flex flex-col"
+      routerLink="/contrato-empresas"
+    >
       <div class="relative aspect-[16/10] overflow-hidden">
         <img
           src="/assets/printer-farm-BHsjBhCR.jpg"
@@ -326,7 +366,7 @@
 <!-- Trust & Authority Section -->
 <section class="site-container site-section">
   <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-    <div class="relative order-2 lg:order-1">
+    <div appScrollReveal [animation]="'fade-right'" class="relative order-2 lg:order-1">
       <div class="absolute -inset-8 rounded-[2.5rem] bg-stream opacity-15 blur-3xl"></div>
       <img
         src="/assets/repair-closeup-BKsKCjRi.jpg"
@@ -343,7 +383,7 @@
       </div>
     </div>
 
-    <div class="order-1 lg:order-2">
+    <div appScrollReveal [animation]="'fade-left'" class="order-1 lg:order-2">
       <p class="eyebrow">Por que confiar</p>
       <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight">
         Experiência profissional desde 1999.
@@ -353,7 +393,7 @@
       </p>
 
       <div class="mt-10 grid gap-6 sm:grid-cols-2">
-        <div class="flex gap-4">
+        <div appScrollReveal [animation]="'fade-up'" [delay]="100" class="flex gap-4">
           <div class="grid size-12 shrink-0 place-items-center rounded-2xl border border-primary/30 bg-primary/10 text-primary">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5"><path d="M12 20v2"></path><path d="M12 2v2"></path><path d="M17 20v2"></path><path d="M17 2v2"></path><path d="M2 12h2"></path><path d="M2 17h2"></path><path d="M2 7h2"></path><path d="M20 12h2"></path><path d="M20 17h2"></path><path d="M20 7h2"></path><path d="M7 20v2"></path><path d="M7 2v2"></path><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="8" y="8" width="8" height="8" rx="1"></rect></svg>
           </div>
@@ -363,7 +403,7 @@
           </div>
         </div>
 
-        <div class="flex gap-4">
+        <div appScrollReveal [animation]="'fade-up'" [delay]="200" class="flex gap-4">
           <div class="grid size-12 shrink-0 place-items-center rounded-2xl border border-primary/30 bg-primary/10 text-primary">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"></path></svg>
           </div>
@@ -373,7 +413,7 @@
           </div>
         </div>
 
-        <div class="flex gap-4">
+        <div appScrollReveal [animation]="'fade-up'" [delay]="300" class="flex gap-4">
           <div class="grid size-12 shrink-0 place-items-center rounded-2xl border border-primary/30 bg-primary/10 text-primary">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5"><line x1="10" x2="14" y1="2" y2="2"></line><line x1="12" x2="15" y1="14" y2="11"></line><circle cx="12" cy="14" r="8"></circle></svg>
           </div>
@@ -383,7 +423,7 @@
           </div>
         </div>
 
-        <div class="flex gap-4">
+        <div appScrollReveal [animation]="'fade-up'" [delay]="400" class="flex gap-4">
           <div class="grid size-12 shrink-0 place-items-center rounded-2xl border border-primary/30 bg-primary/10 text-primary">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
           </div>
@@ -398,7 +438,7 @@
 </section>
 
 <!-- Location Section -->
-<section class="site-container site-section" aria-labelledby="loc-title">
+<section appScrollReveal [animation]="'fade-up'" class="site-container site-section" aria-labelledby="loc-title">
   <div class="mb-10 max-w-2xl">
     <p class="eyebrow">Como nos encontrar</p>
     <h2 id="loc-title" class="mt-3 text-3xl sm:text-4xl font-semibold">Traga sua impressora até a nossa bancada</h2>
@@ -481,8 +521,8 @@
 </section>
 
 <!-- Final CTA Banner -->
-<section class="site-container pb-16">
-  <div class="glass relative overflow-hidden rounded-3xl px-6 py-14 sm:px-12 md:px-16 text-center border border-border/70">
+<section appScrollReveal [animation]="'zoom-in'" class="site-container pb-16">
+  <div class="glass relative overflow-hidden rounded-3xl px-6 py-14 sm:px-12 md:px-16 text-center border border-border/70 shadow-2xl">
     <svg aria-hidden="true" viewBox="0 0 1440 800" preserveAspectRatio="none" class="pointer-events-none absolute inset-0 h-full w-full opacity-60">
       <defs>
         <linearGradient id="cta-ribbon" x1="0" x2="1">

@@ -7,7 +7,7 @@ import { PRINTER_LINES } from '../../data/lines';
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './header.html',
   host: {
-    class: 'sticky top-0 z-50 block w-full',
+    class: 'fixed top-0 inset-x-0 z-50 block w-full',
   },
 })
 export class Header {
