@@ -1,0 +1,519 @@
+<!-- Hero Section -->
+<section class="relative isolate min-h-[90vh] overflow-hidden flex flex-col justify-center">
+  <img
+    src="/assets/hero-lifestream-B2KiVVf0.jpg"
+    alt="Impressora 3D envolta por fluxos de energia verde"
+    width="1920"
+    height="1088"
+    class="absolute inset-0 -z-20 h-full w-full object-cover opacity-80"
+  />
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-background via-background/75 to-transparent"></div>
+  <div class="absolute inset-x-0 bottom-0 -z-10 h-48 bg-gradient-to-t from-background to-transparent"></div>
+
+  <!-- Animated Particle Canvas -->
+  <canvas appLifestream aria-hidden="true" class="pointer-events-none h-full w-full absolute inset-0 -z-10"></canvas>
+
+  <!-- Glowing Energy Ribbon -->
+  <svg
+    aria-hidden="true"
+    viewBox="0 0 1440 800"
+    preserveAspectRatio="none"
+    class="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-2/3 w-full opacity-60"
+  >
+    <defs>
+      <linearGradient id="ribbon" x1="0" x2="1">
+        <stop offset="0" stop-color="var(--stream)" stop-opacity="0"></stop>
+        <stop offset="0.4" stop-color="var(--stream)" stop-opacity="0.9"></stop>
+        <stop offset="0.7" stop-color="var(--stream-cyan)" stop-opacity="0.9"></stop>
+        <stop offset="1" stop-color="var(--stream-cyan)" stop-opacity="0"></stop>
+      </linearGradient>
+      <filter id="ribbon-blur" x="-20%" y="-50%" width="140%" height="200%">
+        <feGaussianBlur stdDeviation="6"></feGaussianBlur>
+      </filter>
+    </defs>
+    <g style="opacity: 0.55">
+      <path
+        d="M-100 420 C 200 300, 420 560, 720 420 S 1200 260, 1540 380"
+        fill="none"
+        stroke="url(#ribbon)"
+        stroke-width="10"
+        filter="url(#ribbon-blur)"
+      ></path>
+      <path
+        d="M-100 420 C 200 300, 420 560, 720 420 S 1200 260, 1540 380"
+        fill="none"
+        stroke="url(#ribbon)"
+        stroke-width="1.4"
+        stroke-dasharray="220 380"
+        class="animate-stream-flow"
+        style="animation-duration: 8s"
+      ></path>
+    </g>
+    <g style="opacity: 0.43">
+      <path
+        d="M-100 520 C 260 440, 480 660, 800 520 S 1240 380, 1540 500"
+        fill="none"
+        stroke="url(#ribbon)"
+        stroke-width="8"
+        filter="url(#ribbon-blur)"
+      ></path>
+      <path
+        d="M-100 520 C 260 440, 480 660, 800 520 S 1240 380, 1540 500"
+        fill="none"
+        stroke="url(#ribbon)"
+        stroke-width="1.4"
+        stroke-dasharray="220 380"
+        class="animate-stream-flow"
+        style="animation-duration: 11s"
+      ></path>
+    </g>
+  </svg>
+
+  <div class="site-container py-20 lg:py-28">
+    <div class="max-w-3xl animate-rise">
+      <p class="eyebrow inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-1.5 backdrop-blur-sm">
+        <span class="size-1.5 rounded-full bg-primary animate-pulse-glow"></span>
+        Assistência técnica especializada em impressoras 3D
+      </p>
+
+      <h1 class="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] tracking-tight">
+        Devolvemos a energia <span class="text-stream">à sua impressora 3D.</span>
+      </h1>
+
+      <p class="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
+        São <strong class="text-foreground">mais de 26 anos</strong> — desde 1999 — consertando equipamentos eletrônicos de informática e tecnologia. Hoje, toda essa experiência está focada em manutenção de impressoras 3D FDM e resina.
+      </p>
+
+      <div class="mt-10 flex flex-wrap gap-4 items-center">
+        <a
+          href="https://wa.me/5515981679823"
+          target="_blank"
+          rel="noreferrer"
+          class="btn-stream"
+        >
+          <span>Solicitar orçamento</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="size-4"
+            aria-hidden="true"
+          >
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+
+        <a class="btn-stream-outline" routerLink="/contato">
+          Como chegar até nós
+        </a>
+      </div>
+
+      <ul class="mt-10 flex flex-wrap gap-x-6 gap-y-2.5 font-mono text-xs uppercase tracking-widest text-muted-foreground">
+        <li class="flex items-center gap-2"><span class="size-1 rounded-full bg-primary/50"></span>Bambu Lab</li>
+        <li class="flex items-center gap-2"><span class="size-1 rounded-full bg-primary/50"></span>Creality</li>
+        <li class="flex items-center gap-2"><span class="size-1 rounded-full bg-primary/50"></span>Elegoo</li>
+        <li class="flex items-center gap-2"><span class="size-1 rounded-full bg-primary/50"></span>Anycubic</li>
+        <li class="flex items-center gap-2"><span class="size-1 rounded-full bg-primary/50"></span>Resina</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Grid -->
+<section class="relative z-10 site-container -mt-10 sm:-mt-14">
+  <div class="glass grid grid-cols-2 md:grid-cols-4 gap-px overflow-hidden rounded-3xl border border-border/80">
+    <div class="p-6 sm:p-8 text-center bg-card/40">
+      <div class="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-stream">26+</div>
+      <div class="mt-2 text-xs sm:text-sm text-muted-foreground">anos em manutenção eletrônica</div>
+    </div>
+    <div class="p-6 sm:p-8 text-center bg-card/40">
+      <div class="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-stream">5</div>
+      <div class="mt-2 text-xs sm:text-sm text-muted-foreground">linhas de impressoras atendidas</div>
+    </div>
+    <div class="p-6 sm:p-8 text-center bg-card/40">
+      <div class="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-stream">180</div>
+      <div class="mt-2 text-xs sm:text-sm text-muted-foreground">dias de garantia nos serviços</div>
+    </div>
+    <div class="p-6 sm:p-8 text-center bg-card/40">
+      <div class="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-stream">10–56h</div>
+      <div class="mt-2 text-xs sm:text-sm text-muted-foreground">úteis para o diagnóstico</div>
+    </div>
+  </div>
+</section>
+
+<!-- Brand Services Section -->
+<section class="site-container site-section">
+  <div class="max-w-2xl">
+    <p class="eyebrow">O que fazemos</p>
+    <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight">
+      Manutenção por marca, com quem conhece cada detalhe.
+    </h2>
+  </div>
+
+  <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <!-- Bambu Lab -->
+    <a class="glass card-hover group relative overflow-hidden rounded-3xl flex flex-col" routerLink="/manutencao-bambu-lab">
+      <div class="relative aspect-[16/10] overflow-hidden">
+        <img
+          src="/assets/printer-bambu-DGzYttBf.jpg"
+          alt="Impressora 3D Bambu Lab em bancada técnica"
+          width="1280"
+          height="960"
+          loading="lazy"
+          class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent"></div>
+        <span class="absolute left-5 top-5 rounded-full border border-primary/40 bg-background/70 px-2.5 py-1 font-mono text-xs text-primary backdrop-blur">01</span>
+      </div>
+      <div class="p-7 pt-4 flex-1 flex flex-col justify-between">
+        <div>
+          <h3 class="text-2xl font-semibold text-foreground">Manutenção Bambu Lab</h3>
+          <p class="mt-2.5 text-sm text-muted-foreground line-clamp-2">X1 Carbon · X1E · P1P · P1S · A1 · A1 mini · AMS</p>
+        </div>
+        <span class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-primary">
+          Ver serviço
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 transition-transform group-hover:translate-x-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </span>
+      </div>
+      <div class="stream-line absolute inset-x-0 bottom-0 opacity-0 transition-opacity group-hover:opacity-100"></div>
+    </a>
+
+    <!-- Creality -->
+    <a class="glass card-hover group relative overflow-hidden rounded-3xl flex flex-col" routerLink="/manutencao-creality">
+      <div class="relative aspect-[16/10] overflow-hidden">
+        <img
+          src="/assets/printer-creality-D54mHevI.jpg"
+          alt="Impressora 3D Creality em bancada técnica"
+          width="1280"
+          height="960"
+          loading="lazy"
+          class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent"></div>
+        <span class="absolute left-5 top-5 rounded-full border border-primary/40 bg-background/70 px-2.5 py-1 font-mono text-xs text-primary backdrop-blur">02</span>
+      </div>
+      <div class="p-7 pt-4 flex-1 flex flex-col justify-between">
+        <div>
+          <h3 class="text-2xl font-semibold text-foreground">Manutenção Creality</h3>
+          <p class="mt-2.5 text-sm text-muted-foreground line-clamp-2">Ender 3 / V2 / V3 / S1 · Ender 5 · K1 / K1C / K1 Max · K2 Plus</p>
+        </div>
+        <span class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-primary">
+          Ver serviço
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 transition-transform group-hover:translate-x-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </span>
+      </div>
+      <div class="stream-line absolute inset-x-0 bottom-0 opacity-0 transition-opacity group-hover:opacity-100"></div>
+    </a>
+
+    <!-- Elegoo -->
+    <a class="glass card-hover group relative overflow-hidden rounded-3xl flex flex-col" routerLink="/manutencao-elegoo">
+      <div class="relative aspect-[16/10] overflow-hidden">
+        <img
+          src="/assets/printer-elegoo-3ksDhL1I.jpg"
+          alt="Impressora 3D Elegoo em bancada técnica"
+          width="1280"
+          height="960"
+          loading="lazy"
+          class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent"></div>
+        <span class="absolute left-5 top-5 rounded-full border border-primary/40 bg-background/70 px-2.5 py-1 font-mono text-xs text-primary backdrop-blur">03</span>
+      </div>
+      <div class="p-7 pt-4 flex-1 flex flex-col justify-between">
+        <div>
+          <h3 class="text-2xl font-semibold text-foreground">Manutenção Elegoo</h3>
+          <p class="mt-2.5 text-sm text-muted-foreground line-clamp-2">Neptune 3 / 4 · Centauri Carbon · Saturn 2 / 3 / 4 · Mars</p>
+        </div>
+        <span class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-primary">
+          Ver serviço
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 transition-transform group-hover:translate-x-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </span>
+      </div>
+      <div class="stream-line absolute inset-x-0 bottom-0 opacity-0 transition-opacity group-hover:opacity-100"></div>
+    </a>
+
+    <!-- Anycubic -->
+    <a class="glass card-hover group relative overflow-hidden rounded-3xl flex flex-col" routerLink="/manutencao-anycubic">
+      <div class="relative aspect-[16/10] overflow-hidden">
+        <img
+          src="/assets/printer-anycubic-DCv6teta.jpg"
+          alt="Impressora 3D Anycubic em bancada técnica"
+          width="1280"
+          height="960"
+          loading="lazy"
+          class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent"></div>
+        <span class="absolute left-5 top-5 rounded-full border border-primary/40 bg-background/70 px-2.5 py-1 font-mono text-xs text-primary backdrop-blur">04</span>
+      </div>
+      <div class="p-7 pt-4 flex-1 flex flex-col justify-between">
+        <div>
+          <h3 class="text-2xl font-semibold text-foreground">Manutenção Anycubic</h3>
+          <p class="mt-2.5 text-sm text-muted-foreground line-clamp-2">Kobra 2 / 3 / Combo · Kobra S1 · Vyper · Photon Mono</p>
+        </div>
+        <span class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-primary">
+          Ver serviço
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 transition-transform group-hover:translate-x-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </span>
+      </div>
+      <div class="stream-line absolute inset-x-0 bottom-0 opacity-0 transition-opacity group-hover:opacity-100"></div>
+    </a>
+
+    <!-- Resina -->
+    <a class="glass card-hover group relative overflow-hidden rounded-3xl flex flex-col" routerLink="/manutencao-impressoras-resina">
+      <div class="relative aspect-[16/10] overflow-hidden">
+        <img
+          src="/assets/printer-resin-lab-8YsjAlob.jpg"
+          alt="Impressora 3D Resina em bancada técnica"
+          width="1280"
+          height="960"
+          loading="lazy"
+          class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent"></div>
+        <span class="absolute left-5 top-5 rounded-full border border-primary/40 bg-background/70 px-2.5 py-1 font-mono text-xs text-primary backdrop-blur">05</span>
+      </div>
+      <div class="p-7 pt-4 flex-1 flex flex-col justify-between">
+        <div>
+          <h3 class="text-2xl font-semibold text-foreground">Impressoras de Resina</h3>
+          <p class="mt-2.5 text-sm text-muted-foreground line-clamp-2">Saturn · Mars · Photon · Halot · Phrozen Sonic</p>
+        </div>
+        <span class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-primary">
+          Ver serviço
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 transition-transform group-hover:translate-x-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </span>
+      </div>
+      <div class="stream-line absolute inset-x-0 bottom-0 opacity-0 transition-opacity group-hover:opacity-100"></div>
+    </a>
+
+    <!-- Empresas -->
+    <a class="card-hover group relative overflow-hidden rounded-3xl border border-primary/40 bg-primary/10 glow flex flex-col" routerLink="/contrato-empresas">
+      <div class="relative aspect-[16/10] overflow-hidden">
+        <img
+          src="/assets/printer-farm-BHsjBhCR.jpg"
+          alt="Farm de impressoras 3D em ambiente industrial"
+          width="1280"
+          height="960"
+          loading="lazy"
+          class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent"></div>
+        <div class="absolute left-5 top-5 grid size-10 place-items-center rounded-xl bg-background/70 border border-primary/40 backdrop-blur">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5 text-primary"><path d="M10 12h4"></path><path d="M10 8h4"></path><path d="M14 21v-3a2 2 0 0 0-4 0v3"></path><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path></svg>
+        </div>
+      </div>
+      <div class="p-7 pt-4 flex-1 flex flex-col justify-between">
+        <div>
+          <h3 class="text-2xl font-semibold text-foreground">Contrato para Empresas</h3>
+          <p class="mt-2.5 text-sm text-muted-foreground line-clamp-2">Manutenção preventiva programada, prioridade no atendimento e relatório técnico para farms e indústrias.</p>
+        </div>
+        <span class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-primary">
+          Conhecer planos
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 transition-transform group-hover:translate-x-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- Trust & Authority Section -->
+<section class="site-container site-section">
+  <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+    <div class="relative order-2 lg:order-1">
+      <div class="absolute -inset-8 rounded-[2.5rem] bg-stream opacity-15 blur-3xl"></div>
+      <img
+        src="/assets/repair-closeup-BKsKCjRi.jpg"
+        alt="Técnico reparando o hotend de uma impressora 3D"
+        width="1280"
+        height="960"
+        loading="lazy"
+        class="relative aspect-[4/3] w-full rounded-3xl border border-border object-cover shadow-2xl"
+      />
+      <div class="glass absolute -bottom-6 -right-3 sm:-right-6 rounded-2xl px-6 py-4 shadow-xl">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5 text-primary"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path><circle cx="12" cy="8" r="6"></circle></svg>
+        <div class="mt-1 font-display text-2xl font-semibold text-foreground">Desde 1999</div>
+        <div class="text-xs text-muted-foreground">no mercado de eletrônicos</div>
+      </div>
+    </div>
+
+    <div class="order-1 lg:order-2">
+      <p class="eyebrow">Por que confiar</p>
+      <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight">
+        Experiência profissional desde 1999.
+      </h2>
+      <p class="mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed">
+        Começamos consertando computadores, monitores e placas eletrônicas. Essa base em eletrônica é o que nos diferencia: entendemos a impressora 3D por dentro — mecânica, placa, firmware e sensores — e não apenas trocamos peças.
+      </p>
+
+      <div class="mt-10 grid gap-6 sm:grid-cols-2">
+        <div class="flex gap-4">
+          <div class="grid size-12 shrink-0 place-items-center rounded-2xl border border-primary/30 bg-primary/10 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5"><path d="M12 20v2"></path><path d="M12 2v2"></path><path d="M17 20v2"></path><path d="M17 2v2"></path><path d="M2 12h2"></path><path d="M2 17h2"></path><path d="M2 7h2"></path><path d="M20 12h2"></path><path d="M20 17h2"></path><path d="M20 7h2"></path><path d="M7 20v2"></path><path d="M7 2v2"></path><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="8" y="8" width="8" height="8" rx="1"></rect></svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-foreground">Diagnóstico</h3>
+            <p class="mt-1 text-sm text-muted-foreground leading-relaxed">Avaliação técnica completa em 10 a 56 horas úteis, com orçamento antes de qualquer serviço.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="grid size-12 shrink-0 place-items-center rounded-2xl border border-primary/30 bg-primary/10 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"></path></svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-foreground">Reparo</h3>
+            <p class="mt-1 text-sm text-muted-foreground leading-relaxed">Peças de qualidade, bancada dedicada e procedimentos documentados.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="grid size-12 shrink-0 place-items-center rounded-2xl border border-primary/30 bg-primary/10 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5"><line x1="10" x2="14" y1="2" y2="2"></line><line x1="12" x2="15" y1="14" y2="11"></line><circle cx="12" cy="14" r="8"></circle></svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-foreground">Teste real</h3>
+            <p class="mt-1 text-sm text-muted-foreground leading-relaxed">Impressão de calibração e peça de teste antes de liberar a entrega.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="grid size-12 shrink-0 place-items-center rounded-2xl border border-primary/30 bg-primary/10 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-foreground">Garantia</h3>
+            <p class="mt-1 text-sm text-muted-foreground leading-relaxed">180 dias de garantia completa em todos os nossos serviços.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Location Section -->
+<section class="site-container site-section" aria-labelledby="loc-title">
+  <div class="mb-10 max-w-2xl">
+    <p class="eyebrow">Como nos encontrar</p>
+    <h2 id="loc-title" class="mt-3 text-3xl sm:text-4xl font-semibold">Traga sua impressora até a nossa bancada</h2>
+    <p class="mt-4 text-base text-muted-foreground">Estamos em Sorocaba/SP. Veja o endereço, os horários de atendimento e de entrega e retirada, e o passo a passo para chegar.</p>
+  </div>
+
+  <div class="grid gap-6 lg:grid-cols-5 items-stretch">
+    <!-- Map iframe with progressive loading -->
+    <div class="glass overflow-hidden rounded-3xl lg:col-span-3 min-h-[350px] lg:min-h-[480px]">
+      <app-interactive-map />
+    </div>
+
+    <!-- Location details -->
+    <div class="glass space-y-6 rounded-3xl p-6 sm:p-8 lg:col-span-2 flex flex-col justify-between">
+      <div class="space-y-6">
+        <div class="flex gap-3.5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-1 size-5 shrink-0 text-primary"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <div>
+            <h3 class="font-semibold text-foreground">Endereço</h3>
+            <p class="mt-1 text-sm text-muted-foreground leading-relaxed">Rua Antônio José Rogick, 257 - Vila Trujillo, Sorocaba - SP, 18060-290</p>
+          </div>
+        </div>
+
+        <div class="flex gap-3.5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-1 size-5 shrink-0 text-primary"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+          <div>
+            <h3 class="font-semibold text-foreground">Horários de Funcionamento</h3>
+            <ul class="mt-1 space-y-1 text-sm text-muted-foreground">
+              <li>• Atendimento: seg a sex: 8h30 às 17h30</li>
+              <li>• Entrega e retirada: seg a sex: 9h às 17h</li>
+              <li>• Sábado e domingo: Fechado</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex gap-3.5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-1 size-5 shrink-0 text-primary"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+          <div>
+            <h3 class="font-semibold text-foreground">Orientações de Chegada</h3>
+            <ol class="mt-2 space-y-2 text-xs sm:text-sm text-muted-foreground">
+              <li class="flex gap-2">
+                <span class="font-mono text-primary font-bold">01</span>
+                <span>Chame no WhatsApp antes de vir para deixarmos a bancada pronta.</span>
+              </li>
+              <li class="flex gap-2">
+                <span class="font-mono text-primary font-bold">02</span>
+                <span>Ficamos na Vila Trujillo, bem próximo ao Sorocaba Shopping.</span>
+              </li>
+              <li class="flex gap-2">
+                <span class="font-mono text-primary font-bold">03</span>
+                <span>Traga a impressora bem embalada, com o cabo de energia e acessórios relacionados ao defeito.</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-3 pt-4 border-t border-border/40">
+        <a
+          href="https://www.google.com/maps/search/?api=1&amp;query=Rua%20Ant%C3%B4nio%20Jos%C3%A9%20Rogick%2C%20257%20-%20Vila%20Trujillo%2C%20Sorocaba%20-%20SP%2C%2018060-290"
+          target="_blank"
+          rel="noreferrer"
+          class="btn-stream !h-10 !px-5 !text-xs sm:!text-sm"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+          Abrir no Google Maps
+        </a>
+        <a
+          href="https://wa.me/5515981679823"
+          target="_blank"
+          rel="noreferrer"
+          class="btn-stream-outline !h-10 !px-5 !text-xs sm:!text-sm"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 text-primary"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>
+          Agendar visita
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA Banner -->
+<section class="site-container pb-16">
+  <div class="glass relative overflow-hidden rounded-3xl px-6 py-14 sm:px-12 md:px-16 text-center border border-border/70">
+    <svg aria-hidden="true" viewBox="0 0 1440 800" preserveAspectRatio="none" class="pointer-events-none absolute inset-0 h-full w-full opacity-60">
+      <defs>
+        <linearGradient id="cta-ribbon" x1="0" x2="1">
+          <stop offset="0" stop-color="var(--stream)" stop-opacity="0"></stop>
+          <stop offset="0.4" stop-color="var(--stream)" stop-opacity="0.9"></stop>
+          <stop offset="0.7" stop-color="var(--stream-cyan)" stop-opacity="0.9"></stop>
+          <stop offset="1" stop-color="var(--stream-cyan)" stop-opacity="0"></stop>
+        </linearGradient>
+      </defs>
+      <g style="opacity: 0.5">
+        <path d="M-100 420 C 200 300, 420 560, 720 420 S 1200 260, 1540 380" fill="none" stroke="url(#cta-ribbon)" stroke-width="8"></path>
+      </g>
+    </svg>
+
+    <div class="relative max-w-2xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground tracking-tight">
+        Impressora parada é projeto atrasado.
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
+        Mande uma foto ou vídeo do problema pelo WhatsApp. Respondemos com uma primeira avaliação técnica, sem compromisso.
+      </p>
+      <div class="mt-8">
+        <a
+          href="https://wa.me/5515981679823"
+          target="_blank"
+          rel="noreferrer"
+          class="btn-stream"
+        >
+          Falar com um técnico
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

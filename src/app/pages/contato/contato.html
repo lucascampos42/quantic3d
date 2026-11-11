@@ -1,0 +1,162 @@
+<!-- Header Hero -->
+<section class="relative overflow-hidden">
+  <canvas appLifestream aria-hidden="true" class="pointer-events-none h-full w-full absolute inset-0 opacity-70"></canvas>
+  <div class="site-container py-16 lg:py-24 relative">
+    <p class="eyebrow">Contato e localização</p>
+    <h1 class="mt-4 max-w-3xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
+      Encontre a <span class="text-stream">Quantic 3D</span>
+    </h1>
+    <p class="mt-6 max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed">
+      Recomendamos chamar no WhatsApp antes de vir: assim já deixamos a bancada técnica pronta e agilizamos o seu atendimento.
+    </p>
+
+    <!-- Quick Contact Cards -->
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      <a
+        href="https://wa.me/5515981679823"
+        target="_blank"
+        rel="noreferrer"
+        class="glass card-hover rounded-2xl p-6 flex flex-col justify-between"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 text-primary"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"></path></svg>
+        <div class="mt-6">
+          <div class="text-xs font-mono uppercase tracking-wider text-muted-foreground">WhatsApp</div>
+          <div class="mt-1 text-base sm:text-lg font-semibold text-foreground">(15) 98167-9823</div>
+        </div>
+      </a>
+
+      <a
+        href="https://www.google.com/maps/search/?api=1&amp;query=Rua%20Ant%C3%B4nio%20Jos%C3%A9%20Rogick%2C%20257%20-%20Vila%20Trujillo%2C%20Sorocaba%20-%20SP%2C%2018060-290"
+        target="_blank"
+        rel="noreferrer"
+        class="glass card-hover rounded-2xl p-6 flex flex-col justify-between"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 text-primary"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        <div class="mt-6">
+          <div class="text-xs font-mono uppercase tracking-wider text-muted-foreground">Endereço</div>
+          <div class="mt-1 text-base sm:text-lg font-semibold text-foreground">Rua Antônio José Rogick, 257 — Sorocaba/SP</div>
+        </div>
+      </a>
+
+      <a
+        href="mailto:quanticsorocaba@gmail.com"
+        target="_blank"
+        rel="noreferrer"
+        class="glass card-hover rounded-2xl p-6 flex flex-col justify-between sm:col-span-2 md:col-span-1"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 text-primary"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
+        <div class="mt-6">
+          <div class="text-xs font-mono uppercase tracking-wider text-muted-foreground">E-mail</div>
+          <div class="mt-1 text-base sm:text-lg font-semibold text-foreground truncate">quanticsorocaba&#64;gmail.com</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Location & Map Details -->
+<section class="site-container site-section pt-0">
+  <div class="grid gap-6 lg:grid-cols-5 items-stretch">
+    <!-- Map iframe with progressive loading -->
+    <div class="glass overflow-hidden rounded-3xl lg:col-span-3 min-h-[350px] lg:min-h-[460px]">
+      <app-interactive-map />
+    </div>
+
+    <!-- Info details -->
+    <div class="glass space-y-6 rounded-3xl p-6 sm:p-8 lg:col-span-2 flex flex-col justify-between">
+      <div class="space-y-6">
+        <div class="flex gap-3.5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-1 size-5 shrink-0 text-primary"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <div>
+            <h3 class="font-semibold text-foreground">Endereço</h3>
+            <p class="mt-1 text-sm text-muted-foreground leading-relaxed">Rua Antônio José Rogick, 257 - Vila Trujillo, Sorocaba - SP, 18060-290</p>
+          </div>
+        </div>
+
+        <div class="flex gap-3.5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-1 size-5 shrink-0 text-primary"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+          <div>
+            <h3 class="font-semibold text-foreground">Horário</h3>
+            <ul class="mt-1 space-y-1 text-sm text-muted-foreground">
+              <li>• Atendimento: seg a sex: 8h30 às 17h30</li>
+              <li>• Entrega e retirada: seg a sex: 9h às 17h</li>
+              <li>• Sábado e domingo: Fechado</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex gap-3.5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-1 size-5 shrink-0 text-primary"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+          <div>
+            <h3 class="font-semibold text-foreground">Como chegar</h3>
+            <ol class="mt-2 space-y-2 text-xs sm:text-sm text-muted-foreground">
+              <li class="flex gap-2">
+                <span class="font-mono text-primary font-bold">01</span>
+                <span>Chame no WhatsApp antes de vir para deixarmos a bancada pronta.</span>
+              </li>
+              <li class="flex gap-2">
+                <span class="font-mono text-primary font-bold">02</span>
+                <span>Ficamos na Vila Trujillo, bem próximo ao Sorocaba Shopping e à Av. General Osório.</span>
+              </li>
+              <li class="flex gap-2">
+                <span class="font-mono text-primary font-bold">03</span>
+                <span>Traga a impressora bem embalada, com o cabo de energia e acessórios relacionados ao defeito.</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-3 pt-4 border-t border-border/40">
+        <a
+          href="https://www.google.com/maps/search/?api=1&amp;query=Rua%20Ant%C3%B4nio%20Jos%C3%A9%20Rogick%2C%20257%20-%20Vila%20Trujillo%2C%20Sorocaba%20-%20SP%2C%2018060-290"
+          target="_blank"
+          rel="noreferrer"
+          class="btn-stream !h-10 !px-5 !text-xs sm:!text-sm"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+          Abrir no Google Maps
+        </a>
+        <a
+          href="https://wa.me/5515981679823"
+          target="_blank"
+          rel="noreferrer"
+          class="btn-stream-outline !h-10 !px-5 !text-xs sm:!text-sm"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 text-primary"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>
+          Agendar visita
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Transport tips -->
+<section class="site-container pb-16">
+  <div class="glass grid gap-8 rounded-3xl p-6 sm:p-8 md:grid-cols-[auto_1fr] md:items-center">
+    <div class="grid size-14 place-items-center rounded-2xl border border-primary/30 bg-primary/10 text-primary shrink-0">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle cx="17" cy="18" r="2"></circle><circle cx="7" cy="18" r="2"></circle></svg>
+    </div>
+    <div>
+      <h2 class="text-xl sm:text-2xl font-semibold text-foreground">Dicas para transportar sua impressora</h2>
+      <ul class="mt-4 grid gap-2.5 text-sm text-muted-foreground sm:grid-cols-2">
+        <li class="flex items-start gap-2">
+          <span class="text-primary font-bold">•</span>
+          <span>Use a caixa e os calços originais sempre que possível.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-primary font-bold">•</span>
+          <span>Prenda o cabeçote e a mesa com fita para evitar choques no trajeto.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-primary font-bold">•</span>
+          <span>Em impressoras de resina, esvazie e embale o tanque separadamente.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-primary font-bold">•</span>
+          <span>Traga a fonte de alimentação e a unidade multicolor (AMS/ACE/CFS).</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

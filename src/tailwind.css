@@ -1,1 +1,320 @@
 @import 'tailwindcss';
+
+@theme inline {
+  --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-display: 'Sora', ui-sans-serif, system-ui, sans-serif;
+
+  /* Colors mapped to CSS variables */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-stream: var(--stream);
+  --color-stream-cyan: var(--stream-cyan);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-deep: var(--deep);
+
+  /* Spacing Tokens */
+  --spacing-section-py: var(--space-section-py);
+  --spacing-section-px: var(--space-section-px);
+  --spacing-container-max: var(--space-container-max);
+
+  /* Shadow & Glow */
+  --shadow-glow: var(--shadow-glow);
+  --shadow-glow-strong: var(--shadow-glow-strong);
+  --shadow-card: var(--shadow-card);
+}
+
+:root {
+  /* ==========================================================================
+     GLOBAL TOKENS: Colors & Palettes (OKLCH)
+     ========================================================================== */
+  --radius: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-3xl: 2.5rem;
+
+  --deep: oklch(11% 0.02 195);
+  --background: oklch(13.5% 0.022 190);
+  --foreground: oklch(96% 0.02 170);
+
+  --card: oklch(18% 0.03 185 / 0.62);
+  --card-foreground: oklch(96% 0.02 170);
+
+  --popover: oklch(17% 0.03 188);
+  --popover-foreground: oklch(96% 0.02 170);
+
+  --stream: oklch(86% 0.2 155);
+  --stream-cyan: oklch(84% 0.13 195);
+  --primary: oklch(86% 0.2 155);
+  --primary-foreground: oklch(16% 0.04 180);
+  --primary-glow: oklch(84% 0.13 195);
+
+  --secondary: oklch(23% 0.035 185);
+  --secondary-foreground: oklch(94% 0.03 170);
+
+  --muted: oklch(21% 0.03 188);
+  --muted-foreground: oklch(74% 0.04 175);
+
+  --accent: oklch(26% 0.05 175);
+  --accent-foreground: oklch(96% 0.02 170);
+
+  --destructive: oklch(65% 0.2 25);
+  --destructive-foreground: oklch(98% 0 0);
+
+  --border: oklch(86% 0.16 160 / 0.14);
+  --input: oklch(86% 0.16 160 / 0.2);
+  --ring: oklch(86% 0.2 155 / 0.6);
+
+  /* ==========================================================================
+     GLOBAL TOKENS: Spacing & Responsive Layout
+     ========================================================================== */
+  --space-container-max: 80rem; /* 1280px */
+  --space-section-px: clamp(1.25rem, 4vw, 2.5rem);
+  --space-section-py: clamp(4rem, 8vw, 7rem);
+  --space-section-gap: clamp(2rem, 5vw, 3.5rem);
+  --space-grid-gap: clamp(1rem, 2.5vw, 1.5rem);
+  --space-card-padding: clamp(1.25rem, 3vw, 2rem);
+
+  /* Gradients & Shadows */
+  --gradient-stream: linear-gradient(110deg, var(--stream) 0%, var(--stream-cyan) 55%, var(--stream) 100%);
+  --gradient-deep: radial-gradient(120% 80% at 50% 0%, oklch(24% 0.06 175) 0%, var(--background) 55%, var(--deep) 100%);
+  --gradient-card: linear-gradient(160deg, oklch(22% 0.04 180 / 0.75), oklch(15% 0.025 192 / 0.55));
+
+  --shadow-glow: 0 0 0 1px oklch(86% 0.2 155 / 0.18), 0 10px 40px -10px oklch(86% 0.2 155 / 0.45);
+  --shadow-glow-strong: 0 0 0 1px oklch(86% 0.2 155 / 0.35), 0 0 60px -6px oklch(86% 0.2 155 / 0.6);
+  --shadow-card: 0 20px 50px -25px oklch(5% 0.02 190 / 0.9);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--gradient-deep);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: oklch(86% 0.2 155 / 0.35);
+}
+
+/* ==========================================================================
+   REUSABLE UTILITIES & LAYOUT HELPERS
+   ========================================================================== */
+
+/* Standard Responsive Containers */
+@utility site-container {
+  width: 100%;
+  max-width: var(--space-container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-section-px);
+  padding-right: var(--space-section-px);
+}
+
+@utility site-section {
+  padding-top: var(--space-section-py);
+  padding-bottom: var(--space-section-py);
+}
+
+@utility eyebrow {
+  font-family: var(--font-mono);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-stream);
+  font-size: 0.72rem;
+}
+
+@utility glass {
+  background: var(--gradient-card);
+  border: 1px solid var(--color-border);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-card);
+}
+
+@utility glow {
+  box-shadow: var(--shadow-glow);
+}
+
+@utility glow-strong {
+  box-shadow: var(--shadow-glow-strong);
+}
+
+@utility card-hover {
+  transition:
+    transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.4s,
+    border-color 0.4s;
+
+  &:hover {
+    box-shadow: var(--shadow-glow);
+    border-color: oklch(86% 0.2 155 / 0.4);
+    transform: translateY(-4px);
+  }
+}
+
+@utility text-stream {
+  background-image: var(--gradient-stream);
+  color: transparent;
+  background-size: 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: 8s linear infinite shimmer;
+}
+
+@utility stream-line {
+  background: linear-gradient(90deg, transparent, var(--stream), var(--stream-cyan), transparent);
+  opacity: 0.6;
+  height: 1px;
+}
+
+/* Button Variants */
+@utility btn-stream {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: var(--stream);
+  color: var(--primary-foreground);
+  box-shadow: var(--shadow-glow);
+  transition: all 0.4s ease;
+  border-radius: 9999px;
+  height: 3rem;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+  font-size: 1rem;
+
+  &:hover {
+    box-shadow: var(--shadow-glow-strong);
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+@utility btn-stream-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background-color: oklch(13.5% 0.022 190 / 0.5);
+  color: var(--foreground);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  border-radius: 9999px;
+  height: 3rem;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+  font-size: 1rem;
+
+  &:hover {
+    border-color: var(--stream);
+    background-color: oklch(86% 0.2 155 / 0.1);
+    color: var(--stream);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Animations */
+@utility animate-rise {
+  animation: 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both rise;
+}
+
+@utility animate-stream-flow {
+  animation: 9s linear infinite stream-flow;
+}
+
+@utility animate-pulse-glow {
+  animation: 4s ease-in-out infinite pulse-glow;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200%;
+  }
+}
+
+@keyframes stream-flow {
+  to {
+    stroke-dashoffset: -1200px;
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  to {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes rise {
+  0% {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  :before,
+  :after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
