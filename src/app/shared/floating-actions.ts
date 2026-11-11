@@ -4,14 +4,14 @@ import { Component, HostListener, signal } from '@angular/core';
   selector: 'app-floating-actions',
   imports: [],
   template: `
-    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-3">
+    <div class="fixed bottom-5 right-5 z-50 flex flex-col items-center gap-3">
       <!-- Back to Top Button -->
       @if (showBackToTop()) {
         <button
           type="button"
           (click)="scrollToTop()"
           aria-label="Voltar ao topo"
-          class="grid size-11 place-items-center rounded-full border border-border/80 bg-background/90 text-foreground shadow-xl backdrop-blur-xl transition-all duration-300 hover:border-primary/50 hover:bg-primary/10 hover:text-primary hover:-translate-y-1 active:scale-95 cursor-pointer animate-rise"
+          class="grid size-11 place-items-center rounded-full border border-primary/40 bg-background/90 text-primary shadow-xl backdrop-blur-xl transition-all duration-300 hover:border-primary hover:bg-primary/20 hover:-translate-y-1 active:scale-95 cursor-pointer animate-rise"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,7 @@ import { Component, HostListener, signal } from '@angular/core';
         target="_blank"
         rel="noreferrer"
         aria-label="Falar no WhatsApp"
-        class="fixed bottom-5 right-5 z-50 grid size-14 place-items-center rounded-full bg-stream text-primary-foreground glow-strong transition-transform hover:scale-105 active:scale-95"
+        class="grid size-14 place-items-center rounded-full bg-stream text-primary-foreground glow-strong transition-transform hover:scale-105 active:scale-95 cursor-pointer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
