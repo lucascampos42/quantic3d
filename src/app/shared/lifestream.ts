@@ -28,7 +28,11 @@ export class Lifestream implements OnInit, OnDestroy {
       root.getPropertyValue('--stream').trim() || '#5cf0a0',
       root.getPropertyValue('--stream-cyan').trim() || '#5ce0f0',
     ];
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const mobile = window.matchMedia('(max-width: 768px), (hover: none)').matches;
+    const dpr = Math.min(window.devicePixelRatio || 1, mobile ? 1.5 : 2);
+    const maxParticles = mobile ? 90 : 260;
+    let running = false;
+    let visible = true;
 
     const spawn = (initial = false): Particle => ({
       x: initial ? Math.random() * this.width : -20,
@@ -41,12 +45,14 @@ export class Lifestream implements OnInit, OnDestroy {
 
     const resize = () => {
       const rect = this.canvas.getBoundingClientRect();
+      // No mobile, a barra de endereço muda só a altura ao rolar: não recria as partículas por isso
+      if (this.particles.length && rect.width === this.width && Math.abs(rect.height - this.height) < 120) return;
       this.width = rect.width;
       this.height = rect.height;
       this.canvas.width = this.width * dpr;
       this.canvas.height = this.height * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const count = Math.round(Math.min(260, (this.width * this.height) / 6500));
+      const count = Math.round(Math.min(maxParticles, (this.width * this.height) / 6500));
       this.particles = Array.from({ length: count }, () => spawn(true));
     };
 
@@ -82,21 +88,41 @@ export class Lifestream implements OnInit, OnDestroy {
       }
 
       ctx.globalAlpha = 1;
-      this.frame = requestAnimationFrame(tick);
+      if (running) this.frame = requestAnimationFrame(tick);
     };
+
+    // Só anima quando o canvas está na tela e a aba está visível (economiza CPU/bateria)
+    const update = () => {
+      const shouldRun = !reduced && visible && document.visibilityState === 'visible';
+      if (shouldRun && !running) {
+        running = true;
+        this.frame = requestAnimationFrame(tick);
+      } else if (!shouldRun && running) {
+        running = false;
+        cancelAnimationFrame(this.frame);
+      }
+    };
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      update();
+    });
 
     resize();
     window.addEventListener('resize', resize);
 
     if (reduced) {
       for (let i = 0; i < 120; i++) tick();
-      cancelAnimationFrame(this.frame);
     } else {
-      this.frame = requestAnimationFrame(tick);
+      observer.observe(this.canvas);
+      document.addEventListener('visibilitychange', update);
+      update();
     }
 
     this.cleanup = () => {
+      running = false;
       cancelAnimationFrame(this.frame);
+      observer.disconnect();
+      document.removeEventListener('visibilitychange', update);
       window.removeEventListener('resize', resize);
     };
   }

@@ -3,10 +3,11 @@ import { RouterLink } from '@angular/router';
 import { Lifestream } from '../../shared/lifestream';
 import { ScrollRevealDirective } from '../../shared/scroll-reveal.directive';
 import { PRINTER_LINES } from '../../data/lines';
+import { WhatsappLinkPipe } from '../../shared/whatsapp';
 
 @Component({
   selector: 'app-product',
-  imports: [RouterLink, Lifestream, ScrollRevealDirective],
+  imports: [RouterLink, Lifestream, ScrollRevealDirective, WhatsappLinkPipe],
   templateUrl: './product.html',
 })
 export class ProductPage {

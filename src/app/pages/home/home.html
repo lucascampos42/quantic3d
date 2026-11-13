@@ -1,10 +1,13 @@
 <!-- Hero Section -->
 <section class="relative isolate min-h-[calc(100svh-4.5rem)] overflow-hidden flex flex-col justify-center">
   <img
-    src="/assets/hero-lifestream-B2KiVVf0.jpg"
+    src="/assets/hero-lifestream.webp"
+    srcset="/assets/hero-lifestream-960.webp 960w, /assets/hero-lifestream.webp 1920w"
+    sizes="100vw"
     alt="Impressora 3D envolta por fluxos de energia verde"
     width="1920"
     height="1088"
+    fetchpriority="high"
     class="absolute inset-0 -z-20 h-full w-full object-cover opacity-80"
   />
   <div class="absolute inset-0 -z-10 bg-gradient-to-r from-background via-background/75 to-transparent"></div>
@@ -86,7 +89,7 @@
 
       <div class="mt-10 flex flex-wrap gap-4 items-center">
         <a
-          href="https://wa.me/5515981679823"
+          [href]="'' | waLink" data-track="whatsapp"
           target="_blank"
           rel="noreferrer"
           class="btn-stream"
@@ -172,7 +175,7 @@
     >
       <div class="relative aspect-[16/10] overflow-hidden">
         <img
-          src="/assets/printer-bambu-DGzYttBf.jpg"
+          src="/assets/printer-bambu-DGzYttBf.webp"
           alt="Impressora 3D Bambu Lab em bancada técnica"
           width="1280"
           height="960"
@@ -205,7 +208,7 @@
     >
       <div class="relative aspect-[16/10] overflow-hidden">
         <img
-          src="/assets/printer-creality-D54mHevI.jpg"
+          src="/assets/printer-creality-D54mHevI.webp"
           alt="Impressora 3D Creality em bancada técnica"
           width="1280"
           height="960"
@@ -238,7 +241,7 @@
     >
       <div class="relative aspect-[16/10] overflow-hidden">
         <img
-          src="/assets/printer-elegoo-3ksDhL1I.jpg"
+          src="/assets/printer-elegoo-3ksDhL1I.webp"
           alt="Impressora 3D Elegoo em bancada técnica"
           width="1280"
           height="960"
@@ -271,7 +274,7 @@
     >
       <div class="relative aspect-[16/10] overflow-hidden">
         <img
-          src="/assets/printer-anycubic-DCv6teta.jpg"
+          src="/assets/printer-anycubic-DCv6teta.webp"
           alt="Impressora 3D Anycubic em bancada técnica"
           width="1280"
           height="960"
@@ -304,7 +307,7 @@
     >
       <div class="relative aspect-[16/10] overflow-hidden">
         <img
-          src="/assets/printer-resin-lab-8YsjAlob.jpg"
+          src="/assets/printer-resin-lab-8YsjAlob.webp"
           alt="Impressora 3D Resina em bancada técnica"
           width="1280"
           height="960"
@@ -337,7 +340,7 @@
     >
       <div class="relative aspect-[16/10] overflow-hidden">
         <img
-          src="/assets/printer-farm-BHsjBhCR.jpg"
+          src="/assets/printer-farm-BHsjBhCR.webp"
           alt="Farm de impressoras 3D em ambiente industrial"
           width="1280"
           height="960"
@@ -369,7 +372,7 @@
     <div appScrollReveal [animation]="'fade-right'" class="relative order-2 lg:order-1">
       <div class="absolute -inset-8 rounded-[2.5rem] bg-stream opacity-15 blur-3xl"></div>
       <img
-        src="/assets/repair-closeup-BKsKCjRi.jpg"
+        src="/assets/repair-closeup-BKsKCjRi.webp"
         alt="Técnico reparando o hotend de uma impressora 3D"
         width="1280"
         height="960"
@@ -507,7 +510,7 @@
           Abrir no Google Maps
         </a>
         <a
-          href="https://wa.me/5515981679823"
+          [href]="'' | waLink" data-track="whatsapp"
           target="_blank"
           rel="noreferrer"
           class="btn-stream-outline !h-10 !px-5 !text-xs sm:!text-sm"
@@ -546,7 +549,7 @@
       </p>
       <div class="mt-8">
         <a
-          href="https://wa.me/5515981679823"
+          [href]="'Olá! Minha impressora 3D está parada. Segue foto/vídeo do problema:' | waLink" data-track="whatsapp"
           target="_blank"
           rel="noreferrer"
           class="btn-stream"

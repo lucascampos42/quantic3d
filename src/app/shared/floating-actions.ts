@@ -1,8 +1,9 @@
 import { Component, HostListener, signal } from '@angular/core';
+import { WhatsappLinkPipe } from './whatsapp';
 
 @Component({
   selector: 'app-floating-actions',
-  imports: [],
+  imports: [WhatsappLinkPipe],
   template: `
     <div class="fixed bottom-5 right-5 z-50 flex flex-col items-center gap-3">
       <!-- Back to Top Button -->
@@ -32,7 +33,7 @@ import { Component, HostListener, signal } from '@angular/core';
 
       <!-- WhatsApp Floating Button (Original Lovable style: Stream neon glow with message-circle) -->
       <a
-        href="https://wa.me/5515981679823"
+        [href]="'' | waLink" data-track="whatsapp"
         target="_blank"
         rel="noreferrer"
         aria-label="Falar no WhatsApp"
