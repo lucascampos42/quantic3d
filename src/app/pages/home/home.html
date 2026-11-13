@@ -1,5 +1,5 @@
 <!-- Hero Section -->
-<section class="relative isolate min-h-[90vh] overflow-hidden flex flex-col justify-center">
+<section class="relative isolate min-h-[calc(100svh-4.5rem)] overflow-hidden flex flex-col justify-center">
   <img
     src="/assets/hero-lifestream-B2KiVVf0.jpg"
     alt="Impressora 3D envolta por fluxos de energia verde"
@@ -130,19 +130,19 @@
 <section
   appScrollReveal
   [animation]="'fade-up'"
-  class="relative z-10 site-container -mt-10 sm:-mt-14"
+  class="relative z-10 site-container -mt-20 sm:-mt-28"
 >
   <div class="glass grid grid-cols-2 md:grid-cols-4 gap-px overflow-hidden rounded-3xl border border-border/80 shadow-2xl">
     <div class="p-6 sm:p-8 text-center bg-card/40">
-      <div class="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-stream">26+</div>
+      <div class="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-stream" [appCountUp]="26" suffix="+">26+</div>
       <div class="mt-2 text-xs sm:text-sm text-muted-foreground">anos em manutenção eletrônica</div>
     </div>
     <div class="p-6 sm:p-8 text-center bg-card/40">
-      <div class="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-stream">5</div>
+      <div class="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-stream" [appCountUp]="5">5</div>
       <div class="mt-2 text-xs sm:text-sm text-muted-foreground">linhas de impressoras atendidas</div>
     </div>
     <div class="p-6 sm:p-8 text-center bg-card/40">
-      <div class="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-stream">180</div>
+      <div class="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-stream" [appCountUp]="180">180</div>
       <div class="mt-2 text-xs sm:text-sm text-muted-foreground">dias de garantia nos serviços</div>
     </div>
     <div class="p-6 sm:p-8 text-center bg-card/40">
@@ -541,7 +541,7 @@
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground tracking-tight">
         Impressora parada é projeto atrasado.
       </h2>
-      <p class="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
+      <p class="mt-4 text-base sm:text-lg text-foreground/90 leading-relaxed [text-shadow:0_1px_12px_rgb(0_0_0/0.85)]">
         Mande uma foto ou vídeo do problema pelo WhatsApp. Respondemos com uma primeira avaliação técnica, sem compromisso.
       </p>
       <div class="mt-8">
