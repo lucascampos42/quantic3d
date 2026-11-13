@@ -375,5 +375,14 @@ h4 {
   :after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Scroll reveal: conteúdo aparece direto, sem deslocamento nem blur */
+  .reveal-base {
+    opacity: 1;
+    transform: none;
+    filter: none;
   }
 }

@@ -14,7 +14,7 @@
 
         <div class="mt-8 flex flex-wrap gap-4 items-center">
           <a
-            href="https://wa.me/5515981679823"
+            [href]="'Olá! Vim pelo site e preciso de manutenção na minha impressora ' + line().shortName + '.' | waLink" data-track="whatsapp"
             target="_blank"
             rel="noreferrer"
             class="btn-stream"
@@ -166,7 +166,7 @@
         Envie fotos ou um vídeo do problema pelo WhatsApp e receba uma primeira avaliação sem compromisso.
       </p>
       <div class="mt-8">
-        <a href="https://wa.me/5515981679823" target="_blank" rel="noreferrer" class="btn-stream">
+        <a [href]="'Olá! Vim pelo site e preciso de manutenção na minha impressora ' + line().shortName + '.' | waLink" data-track="whatsapp" target="_blank" rel="noreferrer" class="btn-stream">
           Falar com um técnico
         </a>
       </div>
