@@ -1,0 +1,20 @@
+# Quantic 3D — Assistência Técnica de Impressoras 3D em Sorocaba
+
+> Desde 1999 (mais de 26 anos de experiência em eletrônica e tecnologia), a Quantic 3D é assistência técnica especializada em manutenção preventiva e corretiva de impressoras 3D FDM e resina em Sorocaba/SP, com diagnóstico técnico em 10 a 56 horas úteis e garantia de 180 dias.
+
+## Informações de Contato e Atendimento
+- **Endereço**: Rua Antônio José Rogick, 257 - Vila Trujillo, Sorocaba/SP, CEP 18060-290
+- **WhatsApp / Telefone**: +55 (15) 98167-9823 (https://wa.me/5515981679823)
+- **E-mail**: quanticsorocaba@gmail.com
+- **Horário de Atendimento**: Segunda a sexta, das 08h30 às 17h30 (entrega e retirada das 09h às 17h)
+- **Garantia**: 180 dias em todos os serviços executados
+
+## Páginas Principais e Serviços
+- [Início — Quantic 3D](https://quantic3d.com.br/): Apresentação institucional, métricas de atendimento, etapas de diagnóstico e localização em Sorocaba.
+- [Manutenção Bambu Lab](https://quantic3d.com.br/manutencao-bambu-lab): Assistência especializada em X1 Carbon, X1E, P1P, P1S, A1, A1 mini, H2D e sistema multicolor AMS / AMS Lite.
+- [Manutenção Creality](https://quantic3d.com.br/manutencao-creality): Conserto, calibração, Klipper e upgrades para Ender 3, Ender 5, K1, K1C, K1 Max, K2 Plus, CR-10 e Halot.
+- [Manutenção Elegoo](https://quantic3d.com.br/manutencao-elegoo): Reparos em impressoras FDM (Neptune 3, Neptune 4, Centauri Carbon) e resina (Saturn, Mars).
+- [Manutenção Anycubic](https://quantic3d.com.br/manutencao-anycubic): Assistência para Kobra 2, Kobra 3 Combo (ACE Pro), Kobra S1, Vyper e linha Photon Mono.
+- [Manutenção de Impressoras de Resina](https://quantic3d.com.br/manutencao-impressoras-resina): Troca de LCD monocromático, filme FEP/nFEP/ACF, descontaminação de vazamentos, matriz UV e eixo Z.
+- [Contrato de Manutenção para Empresas](https://quantic3d.com.br/contrato-empresas): Planos preventivos e corretivos B2B com SLA, prioridade de bancada e relatórios técnicos para farms de impressão 3D, indústrias e escolas.
+- [Como Chegar e Contato](https://quantic3d.com.br/contato): Mapa interativo, endereço completo em Sorocaba/SP, horários e orientações para transporte seguro da impressora 3D.

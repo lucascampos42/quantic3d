@@ -1,0 +1,23 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ards-project/ard-spec/main/spec/schemas/ai-catalog.schema.json",
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Quantic 3D",
+    "identifier": "did:web:quantic3d.com.br"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:quantic3d.com.br:docs:llms-context",
+      "displayName": "Quantic 3D — Guia de Serviços e Atendimento (LLMs)",
+      "description": "Resumo estruturado em Markdown sobre manutenção de impressoras 3D FDM e resina (Bambu Lab, Creality, Elegoo, Anycubic), prazos, garantia de 180 dias e endereço em Sorocaba/SP.",
+      "type": "text/markdown",
+      "url": "https://quantic3d.com.br/llms.txt",
+      "representativeQueries": [
+        "Quais marcas e modelos de impressora 3D a Quantic 3D conserta em Sorocaba?",
+        "Qual é o endereço, telefone WhatsApp e horário de funcionamento da Quantic 3D?",
+        "Como solicitar orçamento de manutenção para impressora Bambu Lab, Creality, Elegoo ou Anycubic?",
+        "Qual o prazo de diagnóstico e tempo de garantia do conserto de impressora 3D?"
+      ]
+    }
+  ]
+}

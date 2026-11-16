@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://quantic3d.com.br/sitemap.xml
+Agentmap: https://quantic3d.com.br/.well-known/ard.json
+
