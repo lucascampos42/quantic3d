@@ -125,6 +125,7 @@
             type="button"
             (click)="toggle(i)"
             [attr.aria-expanded]="open() === i"
+            [attr.aria-controls]="'faq-answer-' + i"
             class="flex w-full items-center justify-between py-2 text-left text-base sm:text-lg font-medium text-foreground transition-colors hover:text-primary cursor-pointer"
           >
             <span>{{ item.q }}</span>
@@ -145,11 +146,13 @@
             </svg>
           </button>
         </h3>
-        @if (open() === i) {
-          <div class="pt-2 pb-3 text-sm sm:text-base text-muted-foreground leading-relaxed animate-rise">
-            {{ item.a }}
-          </div>
-        }
+        <div
+          [id]="'faq-answer-' + i"
+          [hidden]="open() !== i"
+          class="pt-2 pb-3 text-sm sm:text-base text-muted-foreground leading-relaxed animate-rise"
+        >
+          {{ item.a }}
+        </div>
       </div>
     }
   </div>
