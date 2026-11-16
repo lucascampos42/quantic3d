@@ -100,6 +100,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="ai-catalog" href="/.well-known/ai-catalog.json" />
+
+    <!-- Preload Hero LCP Image -->
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/hero-lifestream.webp"
+      imagesrcset="/assets/hero-lifestream-960.webp 960w, /assets/hero-lifestream.webp 1920w"
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
