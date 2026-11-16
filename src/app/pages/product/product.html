@@ -34,10 +34,14 @@
       <div class="relative animate-rise [animation-delay:150ms]">
         <div class="absolute -inset-6 rounded-[2rem] bg-stream opacity-20 blur-3xl"></div>
         <img
-          [src]="line().image"
+          [src]="line().image640"
+          [srcset]="line().image640 + ' 640w, ' + line().image + ' 1280w'"
+          sizes="(min-width: 1024px) 580px, 92vw"
           [alt]="'Manutenção de impressora 3D ' + line().shortName"
-          width="1280"
-          height="960"
+          width="640"
+          height="480"
+          fetchpriority="high"
+          decoding="async"
           class="relative aspect-[4/3] w-full rounded-3xl border border-border object-cover glow shadow-2xl"
         />
       </div>

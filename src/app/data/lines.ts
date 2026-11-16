@@ -13,6 +13,7 @@ export interface PrinterLine {
   headline: string;
   intro: string;
   image: string;
+  image640: string;
   models: string[];
   problems: string[];
   services: PrinterService[];
@@ -32,6 +33,7 @@ export const PRINTER_LINES: PrinterLine[] = [
     intro:
       'Impressoras Bambu Lab são rápidas e sofisticadas — e exigem um técnico que entenda sensores, firmware e o sistema AMS. Fazemos diagnóstico completo, calibração e reparos com peças de qualidade.',
     image: '/assets/printer-bambu-DGzYttBf.webp',
+    image640: '/assets/printer-bambu-DGzYttBf-640.webp',
     models: ['X1 Carbon', 'X1E', 'P1P', 'P1S', 'A1', 'A1 mini', 'H2D', 'AMS / AMS Lite'],
     problems: [
       'Entupimento de hotend e extrusor',
@@ -74,6 +76,7 @@ export const PRINTER_LINES: PrinterLine[] = [
     intro:
       'Somos especialistas na linha Creality, das clássicas Ender às rápidas K1 e K2. Resolvemos desde problemas mecânicos até placas, drivers e firmware — e também fazemos upgrades.',
     image: '/assets/printer-creality-D54mHevI.webp',
+    image640: '/assets/printer-creality-D54mHevI-640.webp',
     models: ['Ender 3 / V2 / V3 / S1', 'Ender 5', 'K1 / K1C / K1 Max', 'K2 Plus', 'CR-10', 'CR-M4', 'Halot (resina)'],
     problems: [
       'Camadas desalinhadas e perda de passos',
@@ -110,6 +113,7 @@ export const PRINTER_LINES: PrinterLine[] = [
     intro:
       'Atendemos toda a linha Elegoo — FDM (Neptune, Centauri Carbon) e resina (Saturn, Mars). Diagnóstico técnico detalhado e reparo com teste de impressão antes da entrega.',
     image: '/assets/printer-elegoo-3ksDhL1I.webp',
+    image640: '/assets/printer-elegoo-3ksDhL1I-640.webp',
     models: [
       'Neptune 3 / Pro / Plus / Max',
       'Neptune 4 / Pro / Plus / Max',
@@ -149,6 +153,7 @@ export const PRINTER_LINES: PrinterLine[] = [
     intro:
       'Da Kobra com ACE Pro às Photon de resina, cuidamos da sua Anycubic com diagnóstico preciso, peças de qualidade e testes reais de impressão antes de devolver.',
     image: '/assets/printer-anycubic-DCv6teta.webp',
+    image640: '/assets/printer-anycubic-DCv6teta-640.webp',
     models: ['Kobra 2 / Neo / Pro / Max', 'Kobra 3 / Combo', 'Kobra S1', 'Vyper', 'Photon Mono / M5s / M7'],
     problems: [
       'Falhas na unidade multicolor ACE Pro',
@@ -185,6 +190,7 @@ export const PRINTER_LINES: PrinterLine[] = [
     intro:
       'Impressoras de resina exigem limpeza técnica, manuseio seguro e peças compatíveis. Nossa bancada dedicada cuida de telas LCD, fontes UV, filmes FEP e mecânica do eixo Z.',
     image: '/assets/printer-resin-lab-8YsjAlob.webp',
+    image640: '/assets/printer-resin-lab-8YsjAlob-640.webp',
     models: [
       'Elegoo Saturn / Mars',
       'Anycubic Photon',
